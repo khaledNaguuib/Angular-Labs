@@ -13,7 +13,7 @@ export class ProductsComponent implements OnInit {
   constructor()
      {
 
-       this.Disount=DiscountOffers['10%'],
+       this.Discount=DiscountOffers['10%'],
        this.Store_name='Qaaf Gallery',
        this.Store_Logo='./assets/x.png',
        this.ClientName='Khaled',
@@ -34,7 +34,7 @@ export class ProductsComponent implements OnInit {
           Img:""
         },
         {
-          ID:1,
+          ID:3,
           Name:"Retro 90's Shirt",
           Quantity:1,
           Price:320,
@@ -49,13 +49,18 @@ export class ProductsComponent implements OnInit {
         {
           ID:100,
           Name:"90's retro shirts"
+        },
+        {
+          ID:101,
+          Name:"Stickers"
         }
       ]
 
      }
 
-
-  Disount!: DiscountOffers;
+  isPurchased:boolean=false;
+  noDis:string=DiscountOffers.noDiscount;
+  Discount!: DiscountOffers;
   Store_name!:string;
   Store_Logo!:string;
   ProductList!:IProduct[];
@@ -63,7 +68,22 @@ export class ProductsComponent implements OnInit {
   ClientName!:string;
   IsPurshased!:boolean;
 
-  
+  arr=[1,2,3,4,5,1];
+
+  isPurchasedChange()
+  {
+    if(this.isPurchased==false){
+      this.isPurchased=true;
+    }
+    
+    
+
+  }
+
+  DisplayClient()
+  {
+    console.log(this.ClientName)
+  }
 
   ngOnInit(): void {
   }

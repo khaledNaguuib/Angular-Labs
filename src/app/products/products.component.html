@@ -1,5 +1,118 @@
+<!-- lab1 -->
+
 {{Store_name}}
 <br>
 <img [src]="Store_Logo" width="100px" height="100px">
 <br>
-<h3> “We offer an explicit discount of:”  {{Disount}} </h3>
+<h3> “We offer an explicit discount of:”  {{Discount}} </h3>
+
+<!-- Lab2 -->
+<h2>Q1</h2>
+<h3 *ngIf="Discount==noDis; then thenBlock else elseBlock; "></h3>
+<ng-template #thenBlock>
+    <h2>
+        we offer no Discount
+    </h2>
+</ng-template>
+
+<ng-template #elseBlock>
+    <h2>
+        we offer discount of: {{Discount}}
+    </h2>
+</ng-template>
+
+<br>
+-----------------------------------------------
+
+<h2>Q2</h2>
+
+<select name="Category">
+    <option value=”good” *ngFor="let cat of CategoryList; index as i">{{cat.Name}}</option>
+</select>
+
+<br>
+
+-----------------------------------------------
+
+<h2>Q3</h2>
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of ProductList; index as i ">
+
+            <td>{{p.ID}}</td>
+            <td>{{p.Name}}</td>
+            <td>{{p.Quantity}}</td>
+            <td>{{p.Price}}</td>
+        </tr>
+
+    </tbody>
+</table>
+-----------------------------------------------
+<h2>Q4</h2>
+
+<input type="text" [(ngModel)]="ClientName">
+{{ClientName}}
+
+<br>
+-----------------------------------------------
+<br>
+<h2>Q5</h2>
+
+
+<input type="button" value="Buy" (click)="isPurchasedChange()">
+{{isPurchased}}
+
+<div *ngIf="isPurchased;  then elseDisplay; else thenDisplay; ">
+</div>
+<ng-template #thenDisplay>
+    <h2>
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr *ngFor="let p of ProductList; index as i ">
+                    <td>{{p.ID}}</td>
+                    <td>{{p.Name}}</td>
+                    <td>{{p.Quantity}}</td>
+                    <td>{{p.Price}}</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </h2>
+</ng-template>
+
+<ng-template #elseDisplay>
+    <div>Thanks for purchasing from our Store: + {{ClientName}}</div>
+</ng-template>
+
+
+-----------------------------------------------
+<br>
+<h2>Q6</h2>
+{{ Store_name | uppercase }}
+<br>
+{{ Discount | percent }}
+
+
+<br>
+-----------------------------------------------
+<h2>Bonus</h2>
+
+{{arr | filter}}
