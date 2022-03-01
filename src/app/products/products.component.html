@@ -1,4 +1,29 @@
-<!-- lab1 -->
+<!--lab3-->
+<h2>Q1</h2>
+<div *ngFor="let product of productList">
+    {{product.ID}}
+    {{product.Name}}
+    {{product.Quantity}}
+    {{product.Price}}
+
+
+</div>
+
+<br>
+------------------------------------------------------
+<h2>Q2</h2>
+
+
+{{"ProductDetails:  ID :" + ProductID.ID + "   , Name   " + ProductID.Name + ",  Price "+ProductID.Price }}
+
+<br>
+------------------------------------------------------
+
+
+
+
+
+<!-- lab1
 
 {{Store_name}}
 <br>
@@ -6,7 +31,7 @@
 <br>
 <h3> “We offer an explicit discount of:”  {{Discount}} </h3>
 
-<!-- Lab2 -->
+Lab2
 <h2>Q1</h2>
 <h3 *ngIf="Discount==noDis; then thenBlock else elseBlock; "></h3>
 <ng-template #thenBlock>
@@ -115,4 +140,4 @@
 -----------------------------------------------
 <h2>Bonus</h2>
 
-{{arr | filter}}
+{{arr | filter}} -->

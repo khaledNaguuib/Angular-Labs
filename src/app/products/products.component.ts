@@ -1,3 +1,4 @@
+import { ProductServiceService } from './../Services/product-service.service';
 import { ICategory } from '../Shared Classes and types/ICategory';
 import { IProduct } from '../Shared Classes and types/IProduct';
 import { DiscountOffers } from '../Shared Classes and types/DiscountOffers.Enum';
@@ -10,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
 
-  constructor()
+  constructor(private productService:ProductServiceService)
      {
 
        this.Discount=DiscountOffers['10%'],
@@ -56,7 +57,9 @@ export class ProductsComponent implements OnInit {
         }
       ]
 
+      
      }
+
 
   isPurchased:boolean=false;
   noDis:string=DiscountOffers.noDiscount;
@@ -70,13 +73,22 @@ export class ProductsComponent implements OnInit {
 
   arr=[1,2,3,4,5,1];
 
+
+
+  productList:any;  
+  ProductID:any;  
+
+
+  renderValues(){
+
+    return this.productList=this.productService.GetAllProducts();
+  }
+
   isPurchasedChange()
   {
     if(this.isPurchased==false){
       this.isPurchased=true;
     }
-    
-    
 
   }
 
@@ -85,7 +97,11 @@ export class ProductsComponent implements OnInit {
     console.log(this.ClientName)
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void 
+  {
+    this.productList=this.productService.GetAllProducts();
+    this.ProductID=this.productService.GetProductById(1);
+
   }
 
 }
