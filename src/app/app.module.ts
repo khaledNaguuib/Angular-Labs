@@ -9,6 +9,13 @@ import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FilterPipe } from './filter.pipe';
+import {HttpClientModule} from '@angular/common/http';
+import { PostsComponent } from './posts/posts.component';
+import { UsersComponent } from './users/users.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { HomeComponent } from './home/home.component';
+
+
 
 @NgModule({
   declarations: [
@@ -16,13 +23,20 @@ import { FilterPipe } from './filter.pipe';
     HeaderComponent,
     ProductsComponent,
     FooterComponent,
-    FilterPipe
+    FilterPipe,
+    PostsComponent,
+    UsersComponent,
+    PagenotfoundComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
+    
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

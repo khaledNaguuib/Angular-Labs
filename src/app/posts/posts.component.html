@@ -1,0 +1,22 @@
+<h2 align="Center">Posts List</h2>
+<hr>
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Body</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of PostsList; index as i ">
+
+            <td>{{p.id}}</td>
+            <td>{{p.title}}</td>
+            <td>{{p.body}}</td>
+
+        </tr>
+
+    </tbody>
+</table>

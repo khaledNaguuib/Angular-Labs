@@ -1,12 +1,45 @@
+
+
+<h2 align="Center">Products List</h2>
+<hr>
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+            <th scope="col">Image</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of ProductList; index as i ">
+
+            <td>{{p.ID}}</td>
+            <td>{{p.Name}}</td>
+            <td>{{p.Quantity}}</td>
+            <td>{{p.Price}}</td>
+            <td> <img src="{{p.Img}}" width="200px" height="150px"></td>
+        </tr>
+
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
 <!--lab3-->
-<h2>Q1</h2>
+<!-- <h2>Q1</h2>
 <div *ngFor="let product of productList">
     {{product.ID}}
     {{product.Name}}
     {{product.Quantity}}
     {{product.Price}}
-
-
 </div>
 
 <br>
@@ -18,7 +51,7 @@
 
 <br>
 ------------------------------------------------------
-
+ -->
 
 
 

@@ -25,22 +25,30 @@ export class ProductsComponent implements OnInit {
           Name:"Marvel Hoodie",
           Quantity:1,
           Price:400,
-          Img:""
+          Img:"/assets/Marvel.png"
         },
         {
           ID:2,
           Name:"Pokemon Hoodie",
-          Quantity:1,
+          Quantity:2,
           Price:400,
-          Img:""
+          Img:"/assets/pok.png"
         },
         {
           ID:3,
-          Name:"Retro 90's Shirt",
+          Name:"Rick & Morty Hoodie",
           Quantity:1,
-          Price:320,
-          Img:""
+          Price:400,
+          Img:"/assets/Rick.png"
+        },
+        {
+          ID:4,
+          Name:"Naruto Hoodie",
+          Quantity:3,
+          Price:400,
+          Img:"/assets/Naruto.png"
         }
+    
       ]
       this.CategoryList=[
         {
@@ -76,13 +84,14 @@ export class ProductsComponent implements OnInit {
 
 
   productList:any;  
+  errMsg:any;
   ProductID:any;  
 
 
-  renderValues(){
+  // renderValues(){
 
-    return this.productList=this.productService.GetAllProducts();
-  }
+  //   return this.productList=this.productService.GetAllProducts();
+  // }
 
   isPurchasedChange()
   {
@@ -99,8 +108,19 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit(): void 
   {
-    this.productList=this.productService.GetAllProducts();
-    this.ProductID=this.productService.GetProductById(1);
+    // this.productList=this.productService.GetAllProducts();
+    // this.ProductID=this.productService.GetProductById(1);
+
+    this.productService.GetAllProducts().subscribe(
+      empData => {
+        this.productList=empData;
+      },
+      error =>{
+        this.errMsg = error;
+      }
+
+
+    )
 
   }
 

@@ -14,12 +14,12 @@ export class AppComponent {
   
 
   constructor(){}
-  @ViewChild(ProductsComponent) ViewProductList!:ProductsComponent;
+  // @ViewChild(ProductsComponent) ViewProductList!:ProductsComponent;
 
-  ngAfterViewInit(): void {
-    this.Products=this.ViewProductList.renderValues();
+  // ngAfterViewInit(): void {
+  //   this.Products=this.ViewProductList.renderValues();
     
-  }
+  // }
 
   DisplayProducts()
   {
